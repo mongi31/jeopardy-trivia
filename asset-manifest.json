@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/jeopardy-trivia/static/css/main.f8468a46.css",
-    "main.js": "/jeopardy-trivia/static/js/main.c1b3c8ab.js",
+    "main.css": "/jeopardy-trivia/static/css/main.326b0323.css",
+    "main.js": "/jeopardy-trivia/static/js/main.44891a06.js",
     "static/js/453.548ea57b.chunk.js": "/jeopardy-trivia/static/js/453.548ea57b.chunk.js",
     "index.html": "/jeopardy-trivia/index.html",
-    "main.f8468a46.css.map": "/jeopardy-trivia/static/css/main.f8468a46.css.map",
-    "main.c1b3c8ab.js.map": "/jeopardy-trivia/static/js/main.c1b3c8ab.js.map",
+    "main.326b0323.css.map": "/jeopardy-trivia/static/css/main.326b0323.css.map",
+    "main.44891a06.js.map": "/jeopardy-trivia/static/js/main.44891a06.js.map",
     "453.548ea57b.chunk.js.map": "/jeopardy-trivia/static/js/453.548ea57b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f8468a46.css",
-    "static/js/main.c1b3c8ab.js"
+    "static/css/main.326b0323.css",
+    "static/js/main.44891a06.js"
   ]
 }
