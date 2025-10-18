@@ -175,20 +175,20 @@ const TriviaApp = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-blue-800 p-2 sm:p-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-4 sm:mb-6">
-          <h1 className="text-4xl sm:text-6xl font-bold text-yellow-400 mb-2" style={{ textShadow: '3px 3px 6px rgba(0,0,0,0.5)' }}>
+        <div className="text-center mb-8">
+          <h1 className="text-5xl font-bold text-yellow-400 mb-2" style={{ textShadow: '3px 3px 6px rgba(0,0,0,0.5)' }}>
             JEOPARDY!
           </h1>
-          <div className="flex items-center justify-center gap-4 sm:gap-8 mt-3">
-            <div className="flex items-center gap-2 text-white text-2xl sm:text-3xl">
-              <Trophy className="text-yellow-400" size={36} />
+          <div className="flex items-center justify-center gap-8 mt-4">
+            <div className="flex items-center gap-2 text-white text-xl">
+              <Trophy className="text-yellow-400" size={28} />
               <span className="font-bold">${score}</span>
             </div>
             <button
               onClick={resetGame}
-              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg transition-colors text-lg sm:text-xl"
+              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors"
             >
-              <RotateCcw size={24} />
+              <RotateCcw size={18} />
               New Game
             </button>
           </div>
@@ -266,40 +266,40 @@ const TriviaApp = () => {
           </div>
         ) : (
           // Question Modal
-          <div className="bg-blue-600 rounded-lg p-4 sm:p-8 shadow-2xl max-w-5xl mx-auto min-h-[85vh] flex flex-col justify-center">
-            <div className="text-center mb-6 sm:mb-8">
-              <div className="text-yellow-400 text-xl sm:text-2xl font-bold uppercase mb-3">
+          <div className="bg-blue-600 rounded-lg p-8 shadow-2xl max-w-2xl mx-auto">
+            <div className="text-center mb-6">
+              <div className="text-yellow-400 text-lg font-bold uppercase mb-2">
                 {currentQuestion.category}
               </div>
-              <div className="text-yellow-400 text-5xl sm:text-7xl font-bold mb-6 sm:mb-8">
+              <div className="text-yellow-400 text-4xl font-bold mb-6">
                 ${categories[currentQuestion.category][currentQuestion.index].points}
               </div>
-              <div className="text-white text-2xl sm:text-4xl md:text-5xl font-medium leading-relaxed">
+              <div className="text-white text-3xl font-medium leading-relaxed">
                 {categories[currentQuestion.category][currentQuestion.index].q}
               </div>
             </div>
 
             {!feedback ? (
-              <div className="space-y-3 sm:space-y-4">
+              <div className="space-y-3">
                 {answersShuffled.map((answer, idx) => (
                   <button
                     key={idx}
                     onClick={() => handleAnswerClick(answer)}
-                    className="w-full px-4 sm:px-8 py-6 sm:py-8 text-left text-xl sm:text-3xl md:text-4xl rounded-lg border-2 sm:border-4 border-white/30 bg-white/10 text-white hover:bg-yellow-400/30 hover:border-yellow-400 transition-all leading-tight"
+                    className="w-full px-6 py-4 text-left text-xl rounded-lg border-2 border-white/30 bg-white/10 text-white hover:bg-yellow-400/30 hover:border-yellow-400 transition-all"
                   >
                     {answer}
                   </button>
                 ))}
               </div>
             ) : (
-              <div className="space-y-4 sm:space-y-6">
-                <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
+              <div className="space-y-4">
+                <div className="space-y-3 mb-4">
                   {answersShuffled.map((answer, idx) => {
                     const question = categories[currentQuestion.category][currentQuestion.index];
                     const isSelected = answer === feedback.selectedAnswer;
                     const isCorrect = answer === question.a;
                     
-                    let buttonClass = 'w-full px-4 sm:px-8 py-6 sm:py-8 text-left text-xl sm:text-3xl md:text-4xl rounded-lg border-2 sm:border-4 transition-all leading-tight ';
+                    let buttonClass = 'w-full px-6 py-4 text-left text-xl rounded-lg border-2 transition-all ';
                     
                     if (isSelected && isCorrect) {
                       buttonClass += 'border-green-500 bg-green-500/30 text-white font-bold';
@@ -318,14 +318,14 @@ const TriviaApp = () => {
                     );
                   })}
                 </div>
-                <div className={`p-6 sm:p-8 rounded-lg ${
+                <div className={`p-4 rounded-lg ${
                   feedback.type === 'correct' ? 'bg-green-500' : 'bg-red-500'
                 } text-white text-center`}>
-                  <p className="text-3xl sm:text-5xl font-bold">{feedback.message}</p>
+                  <p className="text-2xl font-bold">{feedback.message}</p>
                 </div>
                 <button
                   onClick={handleNext}
-                  className="w-full bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-6 sm:py-8 px-6 rounded text-2xl sm:text-4xl transition-colors"
+                  className="w-full bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-3 px-6 rounded text-xl transition-colors"
                 >
                   Continue
                 </button>
